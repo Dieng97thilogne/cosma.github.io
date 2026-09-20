@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Amina Cosmétique — Soins naturels et t-shirts</title>
+<meta name="description" content="Soins naturels au karité, baobab et hibiscus, et t-shirts en coton épais. Commande simple par WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Amina Cosmétique</a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#boutique">Boutique</a>
+      <a href="#ingredients">Ingrédients</a>
+      <a href="#livraison">Livraison</a>
+    </nav>
+    <button class="cart-btn" id="openCart" aria-label="Ouvrir le panier">Panier <span class="n" id="count">0</span></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Soins pour la peau, coton pour le reste.</h1>
+        <p class="lead">Beurre de karité, huile de baobab, sérum à l'hibiscus, et des t-shirts en coton épais dans les couleurs de la terre. Petits lots, commande simple.</p>
+        <div class="cta">
+          <a class="btn primary" href="#boutique" data-filter-link="tout">Voir la boutique</a>
+          <a class="btn" href="#boutique" data-filter-link="tshirts">Les t-shirts</a>
+        </div>
+      </div>
+      <div class="arches" id="arches" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <section class="shop" id="boutique">
+    <div class="wrap">
+      <div class="shop-head">
+        <h2>La boutique</h2>
+        <div class="filters" role="group" aria-label="Filtrer les produits">
+          <button class="chip" data-f="tout" aria-pressed="true">Tout</button>
+          <button class="chip" data-f="cosmetiques" aria-pressed="false">Cosmétiques</button>
+          <button class="chip" data-f="tshirts" aria-pressed="false">T-shirts</button>
+        </div>
+      </div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section class="band" id="ingredients">
+    <div class="wrap">
+      <h2>Des ingrédients simples, pressés et mélangés en petits lots.</h2>
+      <div class="ing">
+        <div><h3>Karité</h3><p>Beurre brut non raffiné, pour nourrir le corps et les cheveux secs.</p></div>
+        <div><h3>Baobab</h3><p>Une huile légère qui pénètre vite et laisse la peau souple.</p></div>
+        <div><h3>Hibiscus</h3><p>Riche en antioxydants, il donne son éclat à notre sérum.</p></div>
+        <div><h3>Moringa</h3><p>Une poudre de feuilles qui purifie doucement dans le savon noir.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="infos" id="livraison">
+    <div class="wrap">
+      <div><h3>Livraison</h3><p>Expédition sous 48 h après confirmation de la commande. Livraison en ville ou en point relais, selon votre choix.</p></div>
+      <div><h3>Paiement</h3><p>À la livraison ou par mobile money. Vous confirmez la commande avec nous sur WhatsApp avant tout paiement.</p></div>
+      <div><h3>Échanges</h3><p>Un t-shirt à la mauvaise taille ? Échange gratuit sous 7 jours, produit non porté. Les soins ouverts ne sont pas repris.</p></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Amina Cosmétique</span>
+    <span>Une question ? <a id="waFoot" href="#" target="_blank" rel="noopener">Écrivez-nous sur WhatsApp</a></span>
+  </div>
+</footer>
+
+<div class="veil" id="veil"></div>
+<aside class="drawer" id="drawer" aria-label="Panier" aria-hidden="true">
+  <header><h2>Votre panier</h2><button class="x" id="closeCart" aria-label="Fermer le panier">×</button></header>
+  <div class="lines" id="lines"></div>
+  <div class="checkout" id="checkout">
+    <div class="total"><span>Total</span><span id="total">0 FCFA</span></div>
+    <label class="field"><span>Nom</span><input id="fName" autocomplete="name"></label>
+    <label class="field"><span>Téléphone</span><input id="fPhone" type="tel" autocomplete="tel"></label>
+    <label class="field"><span>Adresse de livraison</span><textarea id="fAddr" rows="2" autocomplete="street-address"></textarea></label>
+    <button class="btn primary" id="order">Commander sur WhatsApp</button>
+    <div class="err" id="err" role="alert"></div>
+  </div>
+</aside>
+
+<dialog id="dlg" aria-label="Fiche produit"></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
